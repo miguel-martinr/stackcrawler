@@ -4,7 +4,7 @@ from .EntryFilter import EntryFilter
 class StackCrawler:
     def __init__(self, parser: Parser, filter: EntryFilter):
         self._parser = parser
-        self._filter = filter
+        self.filter = filter
 
     def fetch_entries_from_HTML(self, url: str, limit: int = 30):
         html_content = requests.get(url).text
