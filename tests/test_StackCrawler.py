@@ -41,5 +41,6 @@ class TestStackCrawler(TestCase):
                   order_number=2, comments_count=108, points=458),
         ]
 
-        filtered_entries = entry_filter.filter_by_word_count_and_order_by_comments(entries, min_words_count=6)
+        filtered_entries = entry_filter.filter_by_word_count_and_order_by_comments(entries, words_count_gt=6)
         self.assertEqual(expected, filtered_entries)
+
