@@ -19,7 +19,7 @@ class TestEntryFilter(TestCase):
             Entry(title="REI is Laying Off 275 Employees",
                   order_number=4, comments_count=54, points=685),
             Entry(title="Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                  order_number=4, comments_count=None, points=685),
+                  order_number=4, comments_count=None, points=None),
         ]
 
     def test_filter_by_word_count_5_and_order_by_comments(self):
@@ -28,7 +28,7 @@ class TestEntryFilter(TestCase):
         expected = [
             Entry(title="Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                   order_number=4, comments_count=None, points=685),
-                  
+
             Entry(title="REI is Laying Off 275 Employees",
                   order_number=4, comments_count=54, points=685),
             Entry(title="First word discovered in unopened Herculaneum scroll by CS student",
