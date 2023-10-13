@@ -5,4 +5,5 @@ from dataclasses import dataclass
 class Entry:
   title: str
   order_number: int
+  comments_count: int
   points: int
