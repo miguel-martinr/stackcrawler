@@ -22,9 +22,16 @@ class TestHackerNewsParser(TestCase):
         title="First word discovered in unopened Herculaneum scroll by CS student",
         comments_count=108,
         points=458
+      ),
+
+      HackerNewsEntry(
+        order_number=3,
+        title="Signal Identification Wiki",
+        comments_count=None,
+        points=5
       )
     ]
 
     hn_parser = HackerNewsParser()
     entries = hn_parser.parse_entries_from_HTML(html_content)
-    self.assertEqual(expected, entries[:2])
+    self.assertEqual(expected, entries[:3])
