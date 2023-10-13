@@ -36,6 +36,7 @@ class EntryFilter:
         """
         return sorted(
             self._filter_by_words_count(lambda words_count: words_count <= words_count_le, entries),
-            key=lambda entry: entry.points or 0
+            key=lambda entry: entry.points or 0,
+            reverse=not ascending
         )
 
