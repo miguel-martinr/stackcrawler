@@ -3,7 +3,7 @@ from stackcrawler.EntryFilter import EntryFilter
 from stackcrawler.Entry import Entry
 
 
-class TestStackCrawler(TestCase):
+class TestEntryFilter(TestCase):
 
     # Should be able to filter all previous entries with more
     # than five words in the title ordered by the number of comments first.
