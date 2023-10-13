@@ -11,6 +11,6 @@ class EntryFilter:
           Filters entries whose length is greater than 5 and sorts them by comments count
         """
         return sorted(
-            filter(lambda entry: len(entry.title.split()) > 5, entries),
+            filter(lambda entry: len(entry.title.split()) > min_words_count, entries),
             key=lambda entry: entry.comments_count
         )
