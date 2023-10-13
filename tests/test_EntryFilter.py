@@ -68,3 +68,19 @@ class TestEntryFilter(TestCase):
 
         filtered_entries = entry_filter.filter_by_word_count_and_order_by_points(entries, words_count_le=5)
         self.assertEqual(expected, filtered_entries)
+
+
+    def test_filter_by_word_count_le_5_and_order_by_points_descending(self):
+        entry_filter = EntryFilter()
+        entries = self.get_entries()
+        expected = [
+            Entry(title="Desmos 3D graphing calculator",
+                  order_number=3, comments_count=70, points=302),
+            Entry(title="Scrollbars Are Becoming a Problem",
+                  order_number=1, comments_count=67, points=110),
+            Entry(title="Lorem Ipsum",
+                  order_number=6, comments_count=None, points=None),
+        ]
+
+        filtered_entries = entry_filter.filter_by_word_count_and_order_by_points(entries, words_count_le=5, ascending=False)
+        self.assertEqual(expected, filtered_entries)

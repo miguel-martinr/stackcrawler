@@ -28,7 +28,7 @@ class EntryFilter:
             key=lambda entry: entry.comments_count or 0
         )
 
-    def filter_by_word_count_and_order_by_points(self, entries: List[Entry], words_count_le: int = 5) -> List[Entry]:
+    def filter_by_word_count_and_order_by_points(self, entries: List[Entry], words_count_le: int = 5, ascending: bool = True) -> List[Entry]:
         """
           Filters entries whose length is less than or equal to `words_count_le` and sorts them by points
 
