@@ -1,12 +1,14 @@
 from unittest import TestCase
 from stackcrawler.StackCrawler import StackCrawler
-
+from stackcrawler.HackerNewsParser import HackerNewsParser
 
 
 class TestStackCrawler(TestCase):
 
   def test_fetch_entries_from_hacker_news(self):
-    stack_crawler = StackCrawler()
+    stack_crawler = StackCrawler(parser=HackerNewsParser())
     
-    entries = stack_crawler.fetch_entries(url='https://news.ycombinator.com/')
+    entries = stack_crawler.fetch_entries_from_HTML(url='https://news.ycombinator.com/')
     self.assertEqual(30, len(entries))
+    self.assertEqual(1, entries[0].order_number)
+    self.assertEqual(30, entries[29].order_number)
