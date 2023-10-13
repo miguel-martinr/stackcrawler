@@ -54,6 +54,22 @@ class TestEntryFilter(TestCase):
         filtered_entries = entry_filter.filter_by_word_count_and_order_by_comments(entries, words_count_gt=6)
         self.assertEqual(expected, filtered_entries)
 
+    def test_filter_by_word_count_gt_6_and_order_by_comments_descending(self):
+        entry_filter = EntryFilter()
+        entries = self.get_entries()
+        expected = [
+            Entry(title="First word discovered in unopened Herculaneum scroll by CS student",
+                  order_number=2, comments_count=108, points=458),
+
+            Entry(title="Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                  order_number=5, comments_count=None, points=685),
+
+        ]
+
+        filtered_entries = entry_filter.filter_by_word_count_and_order_by_comments(entries, words_count_gt=6, ascending=False)
+        self.assertEqual(expected, filtered_entries)
+
+
     def test_filter_by_word_count_le_5_and_order_by_points(self):
         entry_filter = EntryFilter()
         entries = self.get_entries()

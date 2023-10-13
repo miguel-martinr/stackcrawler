@@ -17,7 +17,7 @@ class EntryFilter:
         )
 
 
-    def filter_by_word_count_and_order_by_comments(self, entries: List[Entry], words_count_gt: int = 5) -> List[Entry]:
+    def filter_by_word_count_and_order_by_comments(self, entries: List[Entry], words_count_gt: int = 5, ascending: bool = True) -> List[Entry]:
         """
           Filters entries whose length is greater than `words_count_gt` and sorts them by comments count
 
