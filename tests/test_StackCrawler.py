@@ -16,4 +16,4 @@ class TestStackCrawler(TestCase):
     entries = stack_crawler.fetch_entries_from_HTML(url='https://news.ycombinator.com/', limit=25)
     self.assertEqual(25, len(entries))
     self.assertEqual(1, entries[0].order_number)
-    self.assertEqual(15, entries[24].order_number)
+    self.assertEqual(25, entries[24].order_number)

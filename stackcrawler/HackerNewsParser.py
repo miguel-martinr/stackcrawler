@@ -35,7 +35,7 @@ class HackerNewsParser(Parser):
             comments_count=comments_count,
         )
 
-    def parse_entries_from_HTML(self, html_content: str, limit: int = 30) -> List[HackerNewsEntry]:
+    def parse_entries_from_HTML(self, html_content: str, limit: int) -> List[HackerNewsEntry]:
         bs = BeautifulSoup(html_content, 'html.parser')
 
         entries = []

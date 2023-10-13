@@ -33,5 +33,5 @@ class TestHackerNewsParser(TestCase):
     ]
 
     hn_parser = HackerNewsParser()
-    entries = hn_parser.parse_entries_from_HTML(html_content)
-    self.assertEqual(expected, entries[:3])
+    entries = hn_parser.parse_entries_from_HTML(html_content, limit=3)
+    self.assertEqual(expected, entries)
