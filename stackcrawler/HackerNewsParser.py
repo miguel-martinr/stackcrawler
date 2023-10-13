@@ -6,7 +6,7 @@ from .HackerNewsEntry import HackerNewsEntry
 
 class HackerNewsParser(Parser):
 
-    def _parse_entry(self, entry_id, raw_entry, raw_entry_info):
+    def _parse_entry(self, entry_id: str, raw_entry: element.Tag, raw_entry_info: element.Tag):
 
         def _get_entry_points(entry_info: element.Tag):
             if entry_info is None:

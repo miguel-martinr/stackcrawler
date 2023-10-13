@@ -10,7 +10,7 @@ class EntryFilter:
       self,
       filter_fn: callable,
       entries: List[Entry],
-    ):
+    ) -> List[Entry] :
         return filter(
             lambda entry: filter_fn(len(entry.title.split())),
             entries
