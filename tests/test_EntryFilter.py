@@ -26,6 +26,9 @@ class TestEntryFilter(TestCase):
         entry_filter = EntryFilter()
         entries = self.get_entries()
         expected = [
+            Entry(title="Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                  order_number=4, comments_count=None, points=685),
+                  
             Entry(title="REI is Laying Off 275 Employees",
                   order_number=4, comments_count=54, points=685),
             Entry(title="First word discovered in unopened Herculaneum scroll by CS student",
@@ -39,6 +42,9 @@ class TestEntryFilter(TestCase):
         entry_filter = EntryFilter()
         entries = self.get_entries()
         expected = [
+            Entry(title="Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                  order_number=4, comments_count=None, points=685),
+
             Entry(title="First word discovered in unopened Herculaneum scroll by CS student",
                   order_number=2, comments_count=108, points=458),
         ]

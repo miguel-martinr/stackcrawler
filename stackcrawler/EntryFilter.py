@@ -25,7 +25,7 @@ class EntryFilter:
         """
         return sorted(
             self._filter_by_words_count(lambda words_count: words_count > words_count_gt, entries),
-            key=lambda entry: entry.comments_count
+            key=lambda entry: entry.comments_count or 0
         )
 
     def filter_by_word_count_and_order_by_points(self, entries: List[Entry], words_count_le: int = 5) -> List[Entry]:
@@ -36,6 +36,6 @@ class EntryFilter:
         """
         return sorted(
             self._filter_by_words_count(lambda words_count: words_count <= words_count_le, entries),
-            key=lambda entry: entry.points
+            key=lambda entry: entry.points or 0
         )
 
