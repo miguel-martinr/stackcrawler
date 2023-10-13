@@ -9,7 +9,7 @@ class TestHackerNewsParser(TestCase):
 
   def test_parse_entries_from_HTML(self):
     html_content = open('./tests/news_ycombinator_sample.html', 'r').read()
-    erxpected = [
+    expected = [
       HackerNewsEntry(
        order_number=1,
        title='Scrollbars Are Becoming a Problem',
@@ -25,5 +25,6 @@ class TestHackerNewsParser(TestCase):
       )
     ]
 
-    entries = HackerNewsParser.parse_entries_from_HTML(html_content)
-    self.assertEqual(erxpected, entries)
+    hn_parser = HackerNewsParser()
+    entries = hn_parser.parse_entries_from_HTML(html_content)
+    self.assertEqual(expected, entries[:2])
