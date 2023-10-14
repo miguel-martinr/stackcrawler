@@ -99,13 +99,12 @@ Similar to HackerNewsEntry, this class is a specification of Parser that encapsu
 This is the class in charge of retrieving data and implementing parsing methods through dependency injection. Besides, it holds an EntryFilter object so it can expose it's filterin/ordering functionalities.
 
 ```Python
-class Parser:
+class StackCrawler: 
+     def __init__(self, parser: Parser, filter: EntryFilter): 
+      ...
   
-  def __init__(self, parser: Parser, filter: EntryFilter):
-    ...
-
-  def parse_entries_from_HTML(self, url: str, limit: int) -> List[Entry]:
-    ...  
+     def fetch_entries_from_HTML(self, url: str, limit: int = 30) -> List[Entry]:
+      ... 
 ```
 
 ## tests/
